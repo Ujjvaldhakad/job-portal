@@ -6,24 +6,7 @@ export const base = {
 
 export const publicUser = {
     INITIAL: "/",
-    HOME1: "/index",
-    HOME2: "/index2",
-    HOME3: "/index3",
-    HOME4: "/index4",
-    HOME5: "/index5",
-    HOME6: "/index6",
-    HOME7: "/index7",
-    HOME8: "/index8",
-    HOME9: "/index9",
-    HOME10: "/index10",
-    HOME11: "/index11",
-    HOME12: "/index12",
-    HOME13: "/index13",
-    HOME14: "/index14",
     HOME15: "/index15",
-    HOME16: "/index16",
-    HOME17: "/index17",
-    HOME18: "/index18",
     jobs: {
         GRID: "/job-grid",
         GRID_MAP: "/job-grid-with-map",
@@ -39,16 +22,16 @@ export const publicUser = {
         DETAIL2: "/emp-detail/2"
     },
     pages: {
-        ABOUT:          "/about-us",
-        PRICING:        "/pricing",
-        ERROR404:       "/error404",
-        FAQ:            "/faq",
-        CONTACT:        "/contact-us",
-        MAINTENANCE:    "/under-maintenance",
-        COMING:         "/coming-soon",
-        LOGIN:          "/login",
-        AFTER_LOGIN:    "/after-login",
-        ICONS:          "/icons"
+        ABOUT: "/about-us",
+        PRICING: "/pricing",
+        ERROR404: "/error404",
+        FAQ: "/faq",
+        CONTACT: "/contact-us",
+        MAINTENANCE: "/under-maintenance",
+        COMING: "/coming-soon",
+        LOGIN: "/login",
+        AFTER_LOGIN: "/after-login",
+        ICONS: "/icons"
     },
     candidate: {
         GRID: "/can-grid",
@@ -66,30 +49,30 @@ export const publicUser = {
 }
 
 export const candidate = {
-    INITIAL:        "/",
-    DASHBOARD:      "/dashboard",
-    PROFILE:        "/profile",
-    APPLIED_JOBS:   "/applied-jobs",
-    RESUME:         "/my-resume",
-    SAVED_JOBS:     "/saved-jobs",
-    CV_MANAGER:     "/cv-manager",
-    ALERTS:         "/job-alerts",
-    CHANGE_PASSWORD:"/change-password",
-    CHAT:           "/chat"
+    INITIAL: "/",
+    DASHBOARD: "/dashboard",
+    PROFILE: "/profile",
+    APPLIED_JOBS: "/applied-jobs",
+    RESUME: "/my-resume",
+    SAVED_JOBS: "/saved-jobs",
+    CV_MANAGER: "/cv-manager",
+    ALERTS: "/job-alerts",
+    CHANGE_PASSWORD: "/change-password",
+    CHAT: "/chat"
 }
 
 export const employer = {
-    INITIAL:        "/",
-    DASHBOARD:      "/dashboard",
-    PROFILE:        "/profile",
-    POST_A_JOB:     "/post-a-job",
-    MANAGE_JOBS:    "/manage-jobs",
-    CANDIDATES:     "/candidates-list",
-    BOOKMARKS:      "/bookmarked-resumes",
-    PACKAGES:       "/packages",
-    MESSAGES1:      "/messages-style-1",
-    MESSAGES2:      "/messages-style-2",
-    RESUME_ALERTS:  "/resume-alerts"
+    INITIAL: "/",
+    DASHBOARD: "/dashboard",
+    PROFILE: "/profile",
+    POST_A_JOB: "/post-a-job",
+    MANAGE_JOBS: "/manage-jobs",
+    CANDIDATES: "/candidates-list",
+    BOOKMARKS: "/bookmarked-resumes",
+    PACKAGES: "/packages",
+    MESSAGES1: "/messages-style-1",
+    MESSAGES2: "/messages-style-2",
+    RESUME_ALERTS: "/resume-alerts"
 }
 
 export function pubRoute(_route) {

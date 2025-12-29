@@ -216,7 +216,7 @@ function Home15Page() {
                 <div className="twm-hpage-6-featured-area">
                     <div className="twm-hpage-6-featured-bg-warp">
                         <div className="twm-media">
-                            <JobZImage className="w-[100%] h-[100%] object-cover" src="images/home-6/featured-jobs/large-pic-1.png" alt="#" />
+                            <JobZImage className="mb-5" src="images/home-6/featured-jobs/large-pic-2.png" alt="#" />
                         </div>
                     </div>
                     <div className="container">
@@ -327,7 +327,7 @@ function Home15Page() {
                                             </div>
                                             <div className="mid-content">
                                                 <div className="company-logo">
-                                                    <JobZImage src="images/home-6/featured-jobs/yahoo.png" alt="#" />
+                                                    <JobZImage src="images/home-6/featured-jobs/yahoo.jpg" alt="#" />
                                                 </div>
                                                 <div className="company-info">
                                                     <NavLink to={publicUser.jobs.DETAIL1} className="company-name">Yahoo!</NavLink>
@@ -357,7 +357,7 @@ function Home15Page() {
                                             </div>
                                             <div className="mid-content">
                                                 <div className="company-logo">
-                                                    <JobZImage src="images/home-6/featured-jobs/google.png" alt="#" />
+                                                    <JobZImage src="images/home-6/featured-jobs/google.jpg" alt="#" />
                                                 </div>
                                                 <div className="company-info">
                                                     <NavLink to={publicUser.jobs.DETAIL1} className="company-name">google</NavLink>
@@ -388,7 +388,7 @@ function Home15Page() {
             </div>
             {/* Featured Jobs SECTION END */}
             {/* EXPLORE NEW LIFE START */}
-            <div className="section-full p-t120 p-b120 twm-explore-area bg-cover " style={{ backgroundImage: `url(${publicUrlFor("images/background/bg-1.jpg")})` }}>
+            <div className="section-full p-t120 p-b120 twm-explore-area bg-cover ">
                 <div className="container">
                     <div className="section-content">
                         <div className="row">

@@ -105,8 +105,8 @@ function Home15Page() {
                                             <div className="icon-content">
                                                 <div className="tw-count-number">
                                                     <span className="counter">
-<CountUp end={98} duration={10} />
-</span>+</div>
+                                                        <CountUp end={98} duration={10} />
+                                                    </span>+</div>
                                                 <p className="icon-content-info">Job For Countries</p>
                                             </div>
                                         </div>
@@ -120,8 +120,8 @@ function Home15Page() {
                                             <div className="icon-content">
                                                 <div className="tw-count-number">
                                                     <span className="counter">
-<CountUp end={12} duration={10} />
-</span>K+</div>
+                                                        <CountUp end={12} duration={10} />
+                                                    </span>K+</div>
                                                 <p className="icon-content-info">Companies Jobs</p>
                                             </div>
                                         </div>
@@ -135,8 +135,8 @@ function Home15Page() {
                                             <div className="icon-content">
                                                 <div className="tw-count-number">
                                                     <span className="counter">
-<CountUp end={3} duration={10} />
-</span>K+</div>
+                                                        <CountUp end={3} duration={10} />
+                                                    </span>K+</div>
                                                 <p className="icon-content-info">Jobs Done</p>
                                             </div>
                                         </div>
@@ -216,7 +216,7 @@ function Home15Page() {
                 <div className="twm-hpage-6-featured-area">
                     <div className="twm-hpage-6-featured-bg-warp">
                         <div className="twm-media">
-                            <JobZImage src="images/home-6/featured-jobs/large-pic-1.png" alt="#" />
+                            <JobZImage className="w-[100%] h-[100%] object-cover" src="images/home-6/featured-jobs/large-pic-1.png" alt="#" />
                         </div>
                     </div>
                     <div className="container">
@@ -511,8 +511,8 @@ function Home15Page() {
                                     <div className="icon-content">
                                         <div className="tw-count-number text-clr-sky">
                                             <span className="counter">
-<CountUp end={5} duration={10} />
-</span>M+</div>
+                                                <CountUp end={5} duration={10} />
+                                            </span>M+</div>
                                         <p className="icon-content-info">Million daily active users</p>
                                     </div>
                                 </div>
@@ -523,8 +523,8 @@ function Home15Page() {
                                     <div className="icon-content">
                                         <div className="tw-count-number text-clr-pink">
                                             <span className="counter">
-<CountUp end={9} duration={10} />
-</span>K+</div>
+                                                <CountUp end={9} duration={10} />
+                                            </span>K+</div>
                                         <p className="icon-content-info">Open job positions</p>
                                     </div>
                                 </div>
@@ -535,8 +535,8 @@ function Home15Page() {
                                     <div className="icon-content">
                                         <div className="tw-count-number text-clr-green">
                                             <span className="counter">
-<CountUp end={2} duration={10} />
-</span>M+</div>
+                                                <CountUp end={2} duration={10} />
+                                            </span>M+</div>
                                         <p className="icon-content-info">Million stories shared</p>
                                     </div>
                                 </div>

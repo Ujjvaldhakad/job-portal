@@ -13,34 +13,16 @@ function Header1({ _config }) {
 
     return (
         <>
-            <header className={"site-header " + _config.style + " mobile-sider-drawer-menu " + (menuActive ? "active" : "") }>
+            <header className={"site-header " + _config.style + " mobile-sider-drawer-menu " + (menuActive ? "active" : "")}>
                 <div className="sticky-header main-bar-wraper navbar-expand-lg">
                     <div className="main-bar">
                         <div className="container-fluid clearfix">
                             <div className="logo-header">
                                 <div className="logo-header-inner logo-header-one">
                                     <NavLink to={publicUser.HOME1}>
-                                        {
-                                            _config.withBlackLogo
-                                                ?
-                                                <JobZImage src="images/logo-12.png" alt="" />
-                                                :
-                                                (
-                                                    _config.withWhiteLogo
-                                                        ?
-                                                        <JobZImage src="images/logo-white.png" alt="" />
-                                                        :
-                                                        (
-                                                            _config.withLightLogo ?
-                                                                <>
-                                                                    <JobZImage id="skin_header_logo_light" src="images/logo-light-3.png" alt="" className="default-scroll-show" />
-                                                                    <JobZImage id="skin_header_logo" src="images/logo-dark.png" alt="" className="on-scroll-show" />
-                                                                </> :
-                                                                <JobZImage id="skin_header_logo" src="images/logo-dark.png" alt="" />
-                                                        )
-                                                )
-                                        }
+                                        <JobZImage src="/images/custom/logo.png" alt="logo" />
                                     </NavLink>
+
                                 </div>
                             </div>
                             {/* NAV Toggle Button */}
@@ -59,43 +41,7 @@ function Header1({ _config }) {
                             {/* MAIN Vav */}
                             <div className="nav-animation header-nav navbar-collapse collapse d-flex justify-content-center">
                                 <ul className=" nav navbar-nav">
-                                    <li className="has-mega-menu"><a href="#">Home</a>
-                                        <ul className="mega-menu">
-                                            <li>
-                                                <ul>
-                                                    <li><NavLink to={publicUser.HOME1}>Home-1</NavLink></li>
-                                                    <li><NavLink to={publicUser.HOME2}>Home-2</NavLink></li>
-                                                    <li><NavLink to={publicUser.HOME3}>Home-3</NavLink></li>
-                                                    <li><NavLink to={publicUser.HOME4}>Home-4</NavLink></li>
-                                                    <li><NavLink to={publicUser.HOME5}>Home-5</NavLink></li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <ul>
-                                                    <li><NavLink to={publicUser.HOME6}>Home-6</NavLink></li>
-                                                    <li><NavLink to={publicUser.HOME7}>Home-7</NavLink></li>
-                                                    <li><NavLink to={publicUser.HOME8}>Home-8</NavLink></li>
-                                                    <li><NavLink to={publicUser.HOME9}>Home-9</NavLink></li>
-                                                    <li><NavLink to={publicUser.HOME10}>Home-10</NavLink></li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <ul>
-                                                    <li><NavLink to={publicUser.HOME11}>Home-11</NavLink></li>
-                                                    <li><NavLink to={publicUser.HOME12}>Home-12</NavLink></li>
-                                                    <li><NavLink to={publicUser.HOME13}>Home-13</NavLink></li>
-                                                    <li><NavLink to={publicUser.HOME14}>Home-14</NavLink></li>
-                                                    <li><NavLink to={publicUser.HOME15}>Home-15</NavLink></li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <ul>
-                                                    <li><NavLink to={publicUser.HOME16}>Home-16</NavLink></li>
-                                                    <li><NavLink to={publicUser.HOME17}>Home-17</NavLink></li>
-                                                    <li><NavLink to={publicUser.HOME18}>Home-18</NavLink></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
+                                    <li className="has-mega-menu"><a href="/">Home</a>
                                     </li>
                                     <li className="has-child"><a href="#">Jobs</a>
                                         <ul className="sub-menu">

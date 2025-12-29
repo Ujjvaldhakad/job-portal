@@ -33,7 +33,7 @@ import BlogDetailPage from "../app/pannels/public-user/components/blogs/blog-det
 function PublicUserRoutes() {
     return (
         <Routes>
-            <Route path={publicUser.HOME15} element={<Home15Page />} />
+            <Route path={'/'} element={<Home15Page />} />
 
             <Route path={publicUser.jobs.LIST} element={<JobsListPage />} />
             <Route path={publicUser.jobs.DETAIL1} element={<JobDetail1Page />} />

@@ -1,5 +1,5 @@
-const User = require('../models/userauth');
-const Admin = require('../models/adminauth');
+const User = require('../../models/user/userauth');
+const Admin = require('../../models/admin/adminauth');
 
 // user register
 const registerUser = async (req, res) => {
@@ -52,8 +52,8 @@ const loginUser = async (req, res) => {
 //user delete
 const userDelete = async (req, res) => {
     try {
-        const { email } = req.query;
-        const user = await User.findOneAndDelete({ email });
+        const { id } = req.query;
+        const user = await User.findByIdAndDelete(id);
         res.status(200).json(user);
     } catch (error) {
         res.status(500).json({ error: error.message });
@@ -112,9 +112,8 @@ const adminLogin = async (req, res) => {
 // admin delete
 const adminDelete = async (req, res) => {
     try {
-        //get user email from query
-        const { email } = req.query;
-        const admin = await Admin.findOneAndDelete({ email });
+        const { id } = req.query;
+        const admin = await Admin.findByIdAndDelete(id);
         res.status(200).json(admin);
     } catch (error) {
         res.status(500).json({ error: error.message });

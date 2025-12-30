@@ -7,16 +7,17 @@ const userAuthRoute = require('./routes/userauth.route');
 
 const port = process.env.PORT;
 
+// express middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // routes
 app.use('/api/user', userAuthRoute);
 
-app.get('/', (req, res) => {
-    res.send('Hello World!');
-});
 
+
+
+// server start
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });

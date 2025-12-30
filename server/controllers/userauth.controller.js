@@ -1,6 +1,7 @@
 const User = require('../models/userauth');
+const Admin = require('../models/adminauth');
 
-
+// user register
 const registerUser = async (req, res) => {
     try {
         const { username, email, phone, password } = req.query;
@@ -11,7 +12,7 @@ const registerUser = async (req, res) => {
     }
 }
 
-
+// user login
 const loginUser = async (req, res) => {
     try {
         const { email, password } = req.query;
@@ -48,5 +49,77 @@ const loginUser = async (req, res) => {
     }
 };
 
+//user delete
+const userDelete = async (req, res) => {
+    try {
+        const { email } = req.query;
+        const user = await User.findOneAndDelete({ email });
+        res.status(200).json(user);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+}
 
-module.exports = { registerUser, loginUser };
+
+// admin register
+const adminRegister = async (req, res) => {
+    try {
+        const { username, email, phone, password } = req.query;
+        const admin = await Admin.create({ username, email, phone, password });
+        res.status(201).json(admin);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+}
+
+// admin login
+const adminLogin = async (req, res) => {
+    try {
+        const { email, password } = req.query;
+
+        // empty check
+        if (!email || !password) {
+            return res.status(400).json({ message: "Email and password required" });
+        }
+
+        // find admin
+        const admin = await Admin.findOne({ email });
+
+        if (!admin) {
+            return res.status(404).json({ message: "Admin not found" });
+        }
+
+        // simple password match (NO hashing)
+        if (admin.password !== password) {
+            return res.status(401).json({ message: "Wrong password" });
+        }
+
+        // success response
+        res.status(200).json({
+            message: "Login successful",
+            admin: {
+                id: admin._id,
+                username: admin.username,
+                email: admin.email
+            }
+        });
+
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+}
+
+// admin delete
+const adminDelete = async (req, res) => {
+    try {
+        //get user email from query
+        const { email } = req.query;
+        const admin = await Admin.findOneAndDelete({ email });
+        res.status(200).json(admin);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+}
+
+// export all user auth functions
+module.exports = { registerUser, loginUser, userDelete, adminRegister, adminLogin, adminDelete };

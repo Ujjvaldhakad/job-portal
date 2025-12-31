@@ -4,8 +4,8 @@ const { registerUser, loginUser, userDelete, adminRegister, adminLogin, adminDel
 const { userMiddleware, adminMiddleware } = require('../../middlewares/auth.middleware')
 
 // user auth routes
-router.post('/register', userMiddleware, registerUser);
-router.post('/login', userMiddleware, loginUser);
+router.post('/register', registerUser);
+router.post('/login', loginUser);
 router.delete('/delete', userMiddleware, userDelete);
 
 // admin auth routes

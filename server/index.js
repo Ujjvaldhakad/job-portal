@@ -3,13 +3,23 @@ const app = express();
 const dotenv = require('dotenv');
 dotenv.config();
 const mongoose = require('mongoose');
+const cors = require('cors');
+const cookieParser = require("cookie-parser");
 const userAuthRoute = require('./routes/authroutes/userauth.route');
 const userOnboardRoute = require('./routes/userroutes/userOnboard.route');
 
 const port = process.env.PORT;
 
+// cors setup
+app.use(cors({
+    origin: "http://localhost:3000",
+    credentials: true,
+}));
+
+
 // express middleware
 app.use(express.json());
+app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
 
 // routes

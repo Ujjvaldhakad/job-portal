@@ -2,12 +2,24 @@ const User = require('../../models/user/userauth');
 const Admin = require('../../models/admin/adminauth');
 
 // user register
+// user register
 const registerUser = async (req, res) => {
     try {
-        const { username, email, phone, password } = req.query;
+        const { username, email, phone, password } = req.body;
+
+        if (!email || !password) {
+            return res.status(400).json({ message: "Email and password are required" });
+        }
+
+        const existingUser = await User.findOne({ email });
+        if (existingUser) {
+            return res.status(400).json({ message: "User already exists" });
+        }
+
         const user = await User.create({ username, email, phone, password });
         res.status(201).json(user);
     } catch (error) {
+        console.error("Error in registerUser:", error);
         res.status(500).json({ error: error.message });
     }
 }
@@ -15,7 +27,7 @@ const registerUser = async (req, res) => {
 // user login
 const loginUser = async (req, res) => {
     try {
-        const { email, password } = req.query;
+        const { email, password } = req.body;
 
         // empty check
         if (!email || !password) {
@@ -52,7 +64,7 @@ const loginUser = async (req, res) => {
 //user delete
 const userDelete = async (req, res) => {
     try {
-        const { id } = req.query;
+        const { id } = req.body;
         const user = await User.findByIdAndDelete(id);
         res.status(200).json(user);
     } catch (error) {
@@ -64,7 +76,7 @@ const userDelete = async (req, res) => {
 // admin register
 const adminRegister = async (req, res) => {
     try {
-        const { username, email, phone, password } = req.query;
+        const { username, email, phone, password } = req.body;
         const admin = await Admin.create({ username, email, phone, password });
         res.status(201).json(admin);
     } catch (error) {
@@ -75,7 +87,7 @@ const adminRegister = async (req, res) => {
 // admin login
 const adminLogin = async (req, res) => {
     try {
-        const { email, password } = req.query;
+        const { email, password } = req.body;
 
         // empty check
         if (!email || !password) {
@@ -112,7 +124,7 @@ const adminLogin = async (req, res) => {
 // admin delete
 const adminDelete = async (req, res) => {
     try {
-        const { id } = req.query;
+        const { id } = req.body;
         const admin = await Admin.findByIdAndDelete(id);
         res.status(200).json(admin);
     } catch (error) {

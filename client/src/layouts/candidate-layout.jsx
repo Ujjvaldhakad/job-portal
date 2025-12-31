@@ -9,6 +9,9 @@ import { setBanner } from "../globals/banner-data";
 import { useLocation } from "react-router-dom";
 import { getHeaderConfig } from "../globals/layout-config";
 
+import YesNoPopup from "../app/common/popups/popup-yes-no";
+import { popupType } from "../globals/constants";
+
 function CandidateLayout() {
     const currentpath = useLocation().pathname;
     return (
@@ -30,7 +33,7 @@ function CandidateLayout() {
                                     </div>
                                 </div>
                                 <div className="col-xl-9 col-lg-8 col-md-12 m-b30">
-                                    
+
                                     <CandidateRoutes />
                                 </div>
                             </div>
@@ -46,6 +49,7 @@ function CandidateLayout() {
 
                 <SignUpPopup />
                 <SignInPopup />
+                <YesNoPopup id="delete-dash-profile" type={popupType.DELETE} msg={"Do you want to delete your profile?"} />
 
             </div>
         </>

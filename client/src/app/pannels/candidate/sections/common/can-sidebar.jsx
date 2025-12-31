@@ -68,6 +68,11 @@ function CanSidebarSection() {
                             Chat
                         </NavLink>
                     </li>
+                    <li>
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#delete-dash-profile"><i className="fa fa-trash-alt" />
+                            Delete Profile
+                        </a>
+                    </li>
                 </ul>
             </div>
         </>

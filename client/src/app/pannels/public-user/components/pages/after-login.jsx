@@ -2,8 +2,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import JobZImage from "../../../../common/jobz-img";
 import { canRoute, candidate, empRoute, employer, publicUser } from "../../../../../globals/route-names";
 import { useState } from "react";
-import processLogin from "../../../../form-processing/login";
-import { formType } from "../../../../../globals/constants";
+import { loginUser, adminLogin } from "../../../../../api/auth";
 
 function AfterLoginPage() {
 
@@ -12,50 +11,28 @@ function AfterLoginPage() {
     const [empusername, setEmpUsername] = useState('admin');
     const [password, setPassword] = useState('12345');
 
-    const handleCandidateLogin = (event) => {
+    const handleCandidateLogin = async (event) => {
         event.preventDefault();
-        loginCandidate();
+        try {
+            const response = await loginUser({ email: canusername, password: password });
+            console.log("Candidate Login Success:", response.data);
+            moveToCandidate();
+        } catch (error) {
+            console.error("Candidate Login Failed:", error);
+            alert("Login failed: " + (error?.response?.data?.message || error.message));
+        }
     }
 
-    const handleEmployerLogin = (event) => {
+    const handleEmployerLogin = async (event) => {
         event.preventDefault();
-        loginEmployer();
-    }
-
-    const loginCandidate = () => {
-        processLogin(
-            {
-                type: formType.LOGIN_CANDIDATE,
-                username: canusername,
-                password: password
-            },
-            (valid) => {
-                if (valid) {
-                    moveToCandidate();
-                } else {
-                    // show error
-                    console.log('error');
-                }
-            }
-        );
-    }
-
-    const loginEmployer = () => {
-        processLogin(
-            {
-                type: formType.LOGIN_EMPLOYER,
-                username: empusername,
-                password: password
-            },
-            (valid) => {
-                if (valid) {
-                    moveToEmployer();
-                } else {
-                    // show error
-                    console.log('error');
-                }
-            }
-        );
+        try {
+            const response = await adminLogin({ email: empusername, password: password });
+            console.log("Employer Login Success:", response.data);
+            moveToEmployer();
+        } catch (error) {
+            console.error("Employer Login Failed:", error);
+            alert("Login failed: " + (error?.response?.data?.message || error.message));
+        }
     }
 
     const moveToCandidate = () => {
@@ -112,7 +89,7 @@ function AfterLoginPage() {
                                                                 type="text"
                                                                 required
                                                                 className="form-control"
-                                                                placeholder="Usearname*"
+                                                                placeholder="Email*"
                                                                 value={canusername}
                                                                 onChange={(event) => {
                                                                     setCanUsername(event.target.value);
@@ -181,7 +158,7 @@ function AfterLoginPage() {
                                                                 type="text"
                                                                 required
                                                                 className="form-control"
-                                                                placeholder="Usearname*"
+                                                                placeholder="Email*"
                                                                 value={empusername}
                                                                 onChange={(event) => {
                                                                     setEmpUsername(event.target.value);

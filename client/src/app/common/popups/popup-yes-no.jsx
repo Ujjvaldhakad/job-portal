@@ -1,15 +1,32 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { popupType } from "../../../globals/constants";
 import { publicUser } from "../../../globals/route-names";
 import React from "react";
+import { deleteUser, adminDelete } from "../../../api/auth";
 
 function YesNoPopup(props) {
 
     const navigate = useNavigate();
+    const location = useLocation();
 
-    const yesHandler = () => {
-        if(props.type === popupType.LOGOUT) {
+    const yesHandler = async () => {
+        if (props.type === popupType.LOGOUT) {
             navigateToAfterLogin();
+        } else if (props.type === popupType.DELETE) {
+            try {
+                if (location.pathname.includes('/candidate/')) {
+                    await deleteUser();
+                    console.log("Candidate deleted");
+                } else if (location.pathname.includes('/employer/')) {
+                    await adminDelete();
+                    console.log("Employer deleted");
+                }
+                // Determine if we should navigate to home or just logout
+                navigateToAfterLogin();
+            } catch (error) {
+                console.error("Delete failed", error);
+                alert("Failed to delete profile: " + (error?.response?.data?.message || error.message));
+            }
         }
     }
 

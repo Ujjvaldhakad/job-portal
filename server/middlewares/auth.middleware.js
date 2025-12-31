@@ -1,6 +1,7 @@
 const User = require("../models/user/userauth");
 const Admin = require("../models/admin/adminauth");
 
+// user middleware
 const userMiddleware = (req, res, next) => {
     try {
         const { email, password } = req.query;
@@ -17,6 +18,7 @@ const userMiddleware = (req, res, next) => {
     }
 }
 
+// admin middleware
 const adminMiddleware = (req, res, next) => {
     try {
         const { email, password } = req.query;

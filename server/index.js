@@ -4,6 +4,7 @@ const dotenv = require('dotenv');
 dotenv.config();
 const mongoose = require('mongoose');
 const userAuthRoute = require('./routes/authroutes/userauth.route');
+const userOnboardRoute = require('./routes/userroutes/userOnboard.route');
 
 const port = process.env.PORT;
 
@@ -13,7 +14,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // routes
 app.use('/api/user', userAuthRoute);
-
+app.use('/api/user', userOnboardRoute);
 
 
 // server start

@@ -14,14 +14,29 @@ function LoginPage() {
     const handleCandidateLogin = async (event) => {
         event.preventDefault();
         try {
-            const response = await loginUser({ email: canusername, password: password });
-            console.log("Candidate Login Success:", response.data);
-            moveToCandidate();
+            const response = await loginUser({
+                email: canusername,
+                password: password
+            });
+
+            const token = response.data.token; // 👈 JWT TOKEN
+
+            // ✅ TOKEN STORE
+            localStorage.setItem("token", token);
+
+            console.log("Candidate Login Success:", token);
+
+            moveToCandidate(); // dashboard / onboard page
+
         } catch (error) {
             console.error("Candidate Login Failed:", error);
-            alert("Login failed: " + (error?.response?.data?.message || error.message));
+            alert(
+                "Login failed: " +
+                (error?.response?.data?.message || error.message)
+            );
         }
-    }
+    };
+
 
     const handleEmployerLogin = async (event) => {
         event.preventDefault();

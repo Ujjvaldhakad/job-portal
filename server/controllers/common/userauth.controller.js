@@ -1,7 +1,7 @@
 const User = require('../../models/user/userauth');
 const Admin = require('../../models/admin/adminauth');
+const jwt = require('jsonwebtoken');
 
-// user register
 // user register
 const registerUser = async (req, res) => {
     try {
@@ -46,6 +46,9 @@ const loginUser = async (req, res) => {
             return res.status(401).json({ message: "Wrong password" });
         }
 
+        // generate token
+        const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: '48h' });
+
         // success response
         res.status(200).json({
             message: "Login successful",
@@ -53,7 +56,8 @@ const loginUser = async (req, res) => {
                 id: user._id,
                 username: user.username,
                 email: user.email
-            }
+            },
+            token
         });
 
     } catch (error) {

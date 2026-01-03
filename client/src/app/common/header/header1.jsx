@@ -43,33 +43,16 @@ function Header1({ _config }) {
                                 <ul className=" nav navbar-nav">
                                     <li className="has-mega-menu"><a href="/">Home</a>
                                     </li>
-                                    <li className="has-child"><a href="#">Jobs</a>
+
+                                    <li className="has-child"><a href={publicUser.jobs.LIST}>Jobs</a>
+                                        {/* <li><NavLink to={publicUser.jobs.LIST}>Jobs List</NavLink></li> */}
+                                    </li>
+                                    <li className="has-child"><a href={publicUser.employer.LIST}>Employers</a>
                                         <ul className="sub-menu">
-                                            <li><NavLink to={publicUser.jobs.GRID}>Jobs Grid</NavLink></li>
-                                            <li><NavLink to={publicUser.jobs.GRID_MAP}>Jobs Grid with Map</NavLink></li>
-                                            <li><NavLink to={publicUser.jobs.LIST}>Jobs List</NavLink></li>
-                                            <li className="has-child"><a href="#">Job Detail</a>
-                                                <ul className="sub-menu">
-                                                    <li><NavLink to={publicUser.jobs.DETAIL1}>Detail 1</NavLink>
-                                                    </li><li><NavLink to={publicUser.jobs.DETAIL2}>Detail 2 </NavLink>
-                                                    </li></ul>
-                                            </li>
-                                            <li><NavLink to={publicUser.jobs.APPLY}>Apply Jobs</NavLink></li>
+                                            {/* <li><NavLink to={publicUser.employer.LIST}>Employers List</NavLink></li> */}
                                         </ul>
                                     </li>
-                                    <li className="has-child"><a href="#">Employers</a>
-                                        <ul className="sub-menu">
-                                            <li><NavLink to={publicUser.employer.GRID}>Employers Grid</NavLink></li>
-                                            <li><NavLink to={publicUser.employer.LIST}>Employers List</NavLink></li>
-                                            <li className="has-child"><a href="#">Employers Detail</a>
-                                                <ul className="sub-menu">
-                                                    <li><NavLink to={publicUser.employer.DETAIL1}>Detail 1</NavLink>
-                                                    </li><li><NavLink to={publicUser.employer.DETAIL2}>Detail 2</NavLink>
-                                                    </li></ul>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li className="has-child"><a href="#">Pages</a>
+                                    <li className="has-child"><a href={publicUser.pages.ABOUT}>Pages</a>
                                         <ul className="sub-menu">
                                             <li><NavLink to={publicUser.pages.ABOUT}>About Us</NavLink></li>
                                             <li><NavLink to={publicUser.pages.PRICING}>Pricing</NavLink></li>
@@ -83,26 +66,10 @@ function Header1({ _config }) {
                                             <li><NavLink to={publicUser.pages.ICONS}>Icons</NavLink></li>
                                         </ul>
                                     </li>
-                                    <li className="has-child"><a href="#">Candidates</a>
-                                        <ul className="sub-menu">
-                                            <li><NavLink to={publicUser.candidate.GRID}>Candidates Grid</NavLink></li>
-                                            <li><NavLink to={publicUser.candidate.LIST}>Candidates List</NavLink></li>
-                                            <li className="has-child"><a href="#">Candidate Detail</a>
-                                                <ul className="sub-menu">
-                                                    <li><NavLink to={publicUser.candidate.DETAIL1}>Detail 1</NavLink>
-                                                    </li><li><NavLink to={publicUser.candidate.DETAIL2}>Detail 2</NavLink>
-                                                    </li></ul>
-                                            </li>
-                                        </ul>
+                                    <li className="has-child"><a href={publicUser.candidate.LIST}>Candidates</a>
+                                        {/* <li><NavLink to={publicUser.candidate.LIST}>Candidates List</NavLink></li> */}
                                     </li>
-                                    <li className="has-child"><a href="#">Blog</a>
-                                        <ul className="sub-menu">
-                                            <li><NavLink to={publicUser.blog.GRID1}>Blog</NavLink></li>
-                                            <li><NavLink to={publicUser.blog.GRID2}>Blog Grid</NavLink></li>
-                                            <li><NavLink to={publicUser.blog.GRID3}>Blog Grid-2</NavLink></li>
-                                            <li><NavLink to={publicUser.blog.LIST}>Blog List</NavLink></li>
-                                            <li><NavLink to={publicUser.blog.DETAIL}>Blog Detail</NavLink></li>
-                                        </ul>
+                                    <li className="has-child"><a href={publicUser.blog.LIST}>Blog</a>
                                     </li>
                                 </ul>
                             </div>

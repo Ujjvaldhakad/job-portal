@@ -10,7 +10,7 @@ const userAuthSchema = new mongoose.Schema({
         trim: true
     },
     phone: Number,
-    password: String
+    password: String,
 },
     {
         timestamps: true

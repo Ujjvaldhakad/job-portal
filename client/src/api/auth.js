@@ -30,4 +30,10 @@ export const adminLogin = (data) => API.post("/user/admin/login", data);
 // Admin Delete
 export const adminDelete = () => API.delete("/user/admin/delete");
 
+
+/* ================= UserOnboard ================= */
+
+// UserOnboard
+export const userOnboard = (data) => API.post("/user/userOnboard", data);
+
 export default API;

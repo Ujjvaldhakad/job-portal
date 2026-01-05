@@ -1,4 +1,46 @@
+import React, { useEffect } from "react";
+import { useState } from "react";
+
+
 function SectionCandicateBasicInfo() {
+
+    // user data
+    const [formData, setFormData] = useState({
+        name: "",
+        phone: "",
+        email: "",
+        website: "",
+        qualification: "",
+        language: "",
+        category: "",
+        experience: "",
+        currentSalary: "",
+        expectedSalary: "",
+        age: "",
+        country: "",
+        city: "",
+        postcode: "",
+        address: "",
+        description: ""
+    })
+
+    // handle change
+    const handleChange = (e) => {
+        setFormData({
+            ...formData,   // copies all existing form data so other fields are not lost
+            [e.target.name]: e.target.value
+        });
+    };
+
+    useEffect(() => {
+        console.log("formData", formData);
+    }, [formData])
+
+
+    const handleSubmit = () => {
+        console.log("handleSubmit");
+    }
+
     return (
         <>
             <form>
@@ -151,7 +193,7 @@ function SectionCandicateBasicInfo() {
                             </div>
                             <div className="col-lg-12 col-md-12">
                                 <div className="text-left">
-                                    <button type="submit" className="site-button">Save Changes</button>
+                                    <button onClick={handleSubmit} type="submit" className="site-button">Save Changes</button>
                                 </div>
                             </div>
                         </div>

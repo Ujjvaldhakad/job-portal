@@ -27,13 +27,19 @@ const userOnboard = async (req, res) => {
     }
 }
 
+// GET – Fetch onboard data
 const getUserOnboard = async (req, res) => {
     try {
-        const user = await User.findOne({ _id: req.user.id });
+        const user = await User.findOne({ userId: req.user.id });
+
+        if (!user) {
+            return res.status(404).json({ error: "User not found" });
+        }
+
         res.status(200).json(user);
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
-}
+};
 
 module.exports = { userOnboard, getUserOnboard }

@@ -105,7 +105,7 @@ function Home15Page() {
                                             <div className="icon-content">
                                                 <div className="tw-count-number">
                                                     <span className="counter">
-                                                        <CountUp end={98} duration={10} />
+                                                        <CountUp end={99} duration={10} />
                                                     </span>+</div>
                                                 <p className="icon-content-info">Job For Countries</p>
                                             </div>

@@ -54,7 +54,12 @@ function SectionCandicateBasicInfo() {
                                 <div className="form-group">
                                     <label>Your Name</label>
                                     <div className="ls-inputicon-box">
-                                        <input className="form-control" name="company_name" type="text" placeholder="Devid Smith" />
+                                        <input
+                                            className="form-control"
+                                            name="company_name"
+                                            type="text"
+                                            placeholder="Devid Smith"
+                                        />
                                         <i className="fs-input-icon fa fa-user " />
                                     </div>
                                 </div>
@@ -72,7 +77,12 @@ function SectionCandicateBasicInfo() {
                                 <div className="form-group">
                                     <label>Email Address</label>
                                     <div className="ls-inputicon-box">
-                                        <input className="form-control" name="company_Email" type="email" placeholder="Devid@example.com" />
+                                        <input
+                                            className="form-control"
+                                            name="company_Email"
+                                            type="email"
+                                            placeholder="Devid@example.com"
+                                        />
                                         <i className="fs-input-icon fas fa-at" />
                                     </div>
                                 </div>
@@ -81,7 +91,12 @@ function SectionCandicateBasicInfo() {
                                 <div className="form-group">
                                     <label>Website</label>
                                     <div className="ls-inputicon-box">
-                                        <input className="form-control" name="company_website" type="text" placeholder="https://devsmith.net" />
+                                        <input
+                                            className="form-control"
+                                            name="company_website"
+                                            type="text"
+                                            placeholder="https://devsmith.net"
+                                        />
                                         <i className="fs-input-icon fa fa-globe-americas" />
                                     </div>
                                 </div>
@@ -90,7 +105,12 @@ function SectionCandicateBasicInfo() {
                                 <div className="form-group">
                                     <label>Qualification</label>
                                     <div className="ls-inputicon-box">
-                                        <input className="form-control" name="company_since" type="text" placeholder="BTech" />
+                                        <input
+                                            className="form-control"
+                                            name="company_since"
+                                            type="text"
+                                            placeholder="BTech"
+                                        />
                                         <i className="fs-input-icon fa fa-user-graduate" />
                                     </div>
                                 </div>
@@ -99,7 +119,12 @@ function SectionCandicateBasicInfo() {
                                 <div className="form-group">
                                     <label>Language</label>
                                     <div className="ls-inputicon-box">
-                                        <input className="form-control" name="company_since" type="text" placeholder="e.x English, Spanish" />
+                                        <input
+                                            className="form-control"
+                                            name="company_since"
+                                            type="text"
+                                            placeholder="e.x English, Spanish"
+                                        />
                                         <i className="fs-input-icon fa fa-language" />
                                     </div>
                                 </div>
@@ -108,7 +133,12 @@ function SectionCandicateBasicInfo() {
                                 <div className="form-group city-outer-bx has-feedback">
                                     <label>Job Category</label>
                                     <div className="ls-inputicon-box">
-                                        <input className="form-control" name="company_since" type="text" placeholder="IT & Software" />
+                                        <input
+                                            className="form-control"
+                                            name="company_since"
+                                            type="text"
+                                            placeholder="IT & Software"
+                                        />
                                         <i className="fs-input-icon fa fa-border-all" />
                                     </div>
                                 </div>
@@ -117,7 +147,12 @@ function SectionCandicateBasicInfo() {
                                 <div className="form-group city-outer-bx has-feedback">
                                     <label>Experience</label>
                                     <div className="ls-inputicon-box">
-                                        <input className="form-control" name="company_since" type="text" placeholder="05 Years" />
+                                        <input
+                                            className="form-control"
+                                            name="company_since"
+                                            type="text"
+                                            placeholder="05 Years"
+                                        />
                                         <i className="fs-input-icon fa fa-user-edit" />
                                     </div>
                                 </div>
@@ -126,7 +161,12 @@ function SectionCandicateBasicInfo() {
                                 <div className="form-group city-outer-bx has-feedback">
                                     <label>Current Salary</label>
                                     <div className="ls-inputicon-box">
-                                        <input className="form-control" name="company_since" type="text" placeholder="65K" />
+                                        <input
+                                            className="form-control"
+                                            name="company_since"
+                                            type="text"
+                                            placeholder="65K"
+                                        />
                                         <i className="fs-input-icon fa fa-dollar-sign" />
                                     </div>
                                 </div>
@@ -135,7 +175,12 @@ function SectionCandicateBasicInfo() {
                                 <div className="form-group city-outer-bx has-feedback">
                                     <label>Expected Salary</label>
                                     <div className="ls-inputicon-box">
-                                        <input className="form-control" name="company_since" type="text" placeholder="75K" />
+                                        <input
+                                            className="form-control"
+                                            name="company_since"
+                                            type="text"
+                                            placeholder="75K"
+                                        />
                                         <i className="fs-input-icon fa fa-dollar-sign" />
                                     </div>
                                 </div>
@@ -144,7 +189,12 @@ function SectionCandicateBasicInfo() {
                                 <div className="form-group city-outer-bx has-feedback">
                                     <label>Age</label>
                                     <div className="ls-inputicon-box">
-                                        <input className="form-control" name="company_since" type="text" placeholder="35 Years" />
+                                        <input
+                                            className="form-control"
+                                            name="company_since"
+                                            type="text"
+                                            placeholder="35 Years"
+                                        />
                                         <i className="fs-input-icon fa fa-child" />
                                     </div>
                                 </div>
@@ -153,7 +203,12 @@ function SectionCandicateBasicInfo() {
                                 <div className="form-group city-outer-bx has-feedback">
                                     <label>Country</label>
                                     <div className="ls-inputicon-box">
-                                        <input className="form-control" name="company_since" type="text" placeholder="USA" />
+                                        <input
+                                            className="form-control"
+                                            name="company_since"
+                                            type="text"
+                                            placeholder="USA"
+                                        />
                                         <i className="fs-input-icon fa fa-globe-americas" />
                                     </div>
                                 </div>
@@ -162,7 +217,12 @@ function SectionCandicateBasicInfo() {
                                 <div className="form-group city-outer-bx has-feedback">
                                     <label>City</label>
                                     <div className="ls-inputicon-box">
-                                        <input className="form-control" name="company_since" type="text" placeholder="Texas" />
+                                        <input
+                                            className="form-control"
+                                            name="company_since"
+                                            type="text"
+                                            placeholder="Texas"
+                                        />
                                         <i className="fs-input-icon fa fa-globe-americas" />
                                     </div>
                                 </div>
@@ -171,7 +231,12 @@ function SectionCandicateBasicInfo() {
                                 <div className="form-group city-outer-bx has-feedback">
                                     <label>Postcode</label>
                                     <div className="ls-inputicon-box">
-                                        <input className="form-control" name="company_since" type="text" placeholder={75462} />
+                                        <input
+                                            className="form-control"
+                                            name="company_since"
+                                            type="text"
+                                            placeholder={75462}
+                                        />
                                         <i className="fs-input-icon fas fa-map-pin" />
                                     </div>
                                 </div>
@@ -180,7 +245,12 @@ function SectionCandicateBasicInfo() {
                                 <div className="form-group city-outer-bx has-feedback">
                                     <label>Full Address</label>
                                     <div className="ls-inputicon-box">
-                                        <input className="form-control" name="company_since" type="text" placeholder="1363-1385 Sunset Blvd Angeles, CA 90026 ,USA" />
+                                        <input
+                                            className="form-control"
+                                            name="company_since"
+                                            type="text"
+                                            placeholder="1363-1385 Sunset Blvd Angeles, CA 90026 ,USA"
+                                        />
                                         <i className="fs-input-icon fas fa-map-marker-alt" />
                                     </div>
                                 </div>

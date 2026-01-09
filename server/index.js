@@ -7,6 +7,7 @@ const cors = require('cors');
 const cookieParser = require("cookie-parser");
 const userAuthRoute = require('./routes/authroutes/userauth.route');
 const userOnboardRoute = require('./routes/userroutes/userOnboard.route');
+const jobRoute = require('./routes/jobs/job.route');
 
 const port = process.env.PORT;
 
@@ -25,13 +26,13 @@ app.use(express.urlencoded({ extended: true }));
 // routes
 app.use('/api/user', userAuthRoute);
 app.use('/api/user', userOnboardRoute);
-
+// job routes
+app.use('/api/jobs', jobRoute);
 
 // server start
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });
-
 
 
 // connect mongoose

@@ -10,6 +10,7 @@ const userOnboardRoute = require('./routes/userroutes/userOnboard.route');
 const jobRoute = require('./routes/jobs/job.route');
 const companyRoute = require('./routes/company/company.route');
 const jobApplicationRoute = require('./routes/jobs/jobApplication.route');
+const userResumeRoute = require('./routes/userroutes/userResume.route');
 
 const port = process.env.PORT;
 
@@ -36,6 +37,9 @@ app.use('/api/company', companyRoute);
 
 // job application routes
 app.use('/api/jobs', jobApplicationRoute);
+
+// user resume routes
+app.use('/api/user', userResumeRoute);
 
 // server start
 app.listen(port, () => {

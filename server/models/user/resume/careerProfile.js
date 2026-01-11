@@ -14,3 +14,4 @@ const careerProfileSchema = new mongoose.Schema({
 })
 
 module.exports = mongoose.model("CareerProfile", careerProfileSchema);
+

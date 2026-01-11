@@ -1,12 +1,10 @@
-import { publicUrlFor } from "../../../globals/constants";
-import JobZImage from "../jobz-img";
 import { NavLink } from "react-router-dom";
 import { publicUser } from "../../../globals/route-names";
 
 function Footer1() {
     return (
         <>
-            <footer className="footer-dark" style={{ backgroundImage: `url(${publicUrlFor("images/f-bg.jpg")})` }}>
+            <footer className="footer-dark">
                 <div className="container">
                     {/* NEWS LETTER SECTION START */}
                     <div className="ftr-nw-content">
@@ -34,7 +32,7 @@ function Footer1() {
                             <div className="col-lg-3 col-md-12">
                                 <div className="widget widget_about">
                                     <div className="logo-footer clearfix">
-                                        <NavLink to={publicUser.HOME1}><JobZImage id="skin_footer_dark_logo" src="images/logo-light.png" alt="" /></NavLink>
+                                        <NavLink to={publicUser.HOME1}><img id="skin_footer_dark_logo" src="/assets/images/custom/logo-white.png" alt="" /></NavLink>
                                     </div>
                                     <p>Many desktop publishing packages and web page editors now.</p>
                                     <ul className="ftr-list">

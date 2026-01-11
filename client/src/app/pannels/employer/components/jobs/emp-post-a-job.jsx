@@ -1,3 +1,6 @@
+import React from "react";
+
+
 function EmpPostAJobPage() {
     return (
         <>
@@ -5,7 +8,7 @@ function EmpPostAJobPage() {
                 <h2>Post a Job</h2>
                 <div className="breadcrumbs"><a href="#">Home</a><a href="#">Dasboard</a><span>Job Submission Form</span></div>
             </div>
-            
+
             {/*Basic Information*/}
             <div className="panel panel-default">
                 <div className="panel-heading wt-panel-heading p-a20">

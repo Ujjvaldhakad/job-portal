@@ -31,4 +31,13 @@ const jobController = async (req, res) => {
     }
 }
 
-module.exports = { jobController };
+const getjobs = async (req, res) => {
+    try {
+        const getjob = await job.find();
+        res.status(200).json(getjob);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+}
+
+module.exports = { jobController, getjobs };

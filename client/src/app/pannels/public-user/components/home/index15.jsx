@@ -4,6 +4,8 @@ import { publicUser } from "../../../../../globals/route-names";
 import { loadScript, publicUrlFor, updateSkinStyle } from "../../../../../globals/constants";
 import CountUp from "react-countup";
 import { useEffect } from "react";
+import { getAllJobs } from "../../../../../api/jobapis.js";
+import { useState } from "react";
 
 function Home15Page() {
 
@@ -11,6 +13,24 @@ function Home15Page() {
         updateSkinStyle("7", true, false)
         loadScript("js/custom.js")
     })
+
+    const [jobs, setJobs] = useState([])
+
+
+    // fetch jobs
+    const fetchjobs = async () => {
+        try {
+            const res = await getAllJobs()
+            setJobs(res.data) // backend data array
+            console.log(res)
+        } catch (err) {
+            console.log(err)
+        }
+    }
+
+    useEffect(() => {
+        fetchjobs();
+    }, []);
 
     return (
         <>
@@ -562,101 +582,27 @@ function Home15Page() {
                     <div className="section-content">
                         <div className="twm-jobs-list-wrap">
                             <ul>
-                                <li>
-                                    <div className="twm-jobs-list-style1 mb-5">
-                                        <div className="twm-media">
-                                            <JobZImage src="images/jobs-company/pic1.jpg" alt="#" />
+                                {jobs?.map((job) => (
+                                    <li key={job._id}>
+                                        <div className="twm-jobs-list-style1 mb-5">
+                                            <div className="twm-media">
+                                                <JobZImage src="images/jobs-company/pic1.jpg" alt="#" />
+                                            </div>
+                                            <div className="twm-mid-content">
+                                                <NavLink to={publicUser.jobs.DETAIL1} className="twm-job-title">
+                                                    <h4>{job.title}  <span className="twm-job-post-duration">/ 1 days ago</span></h4>
+                                                </NavLink>
+                                                <p className="twm-job-address">{job.location}</p>
+                                                <a href="https://themeforest.net/user/thewebmax/portfolio" className="twm-job-websites site-text-primary">{job.website}</a>
+                                            </div>
+                                            <div className="twm-right-content">
+                                                <div className="twm-jobs-category green"><span className="twm-bg-green">New</span></div>
+                                                <div className="twm-jobs-amount">${job.offerdSalary} <span>/ Month</span></div>
+                                                <NavLink to={publicUser.jobs.DETAIL1} className="twm-jobs-browse site-text-primary">Browse Job</NavLink>
+                                            </div>
                                         </div>
-                                        <div className="twm-mid-content">
-                                            <NavLink to={publicUser.jobs.DETAIL1} className="twm-job-title">
-                                                <h4>Senior Web Designer , Developer  <span className="twm-job-post-duration">/ 1 days ago</span></h4>
-                                            </NavLink>
-                                            <p className="twm-job-address">1363-1385 Sunset Blvd Los Angeles, CA 90026, USA</p>
-                                            <a href="https://themeforest.net/user/thewebmax/portfolio" className="twm-job-websites site-text-primary">https://thewebmax.com</a>
-                                        </div>
-                                        <div className="twm-right-content">
-                                            <div className="twm-jobs-category green"><span className="twm-bg-green">New</span></div>
-                                            <div className="twm-jobs-amount">$2500 <span>/ Month</span></div>
-                                            <NavLink to={publicUser.jobs.DETAIL1} className="twm-jobs-browse site-text-primary">Browse Job</NavLink>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div className="twm-jobs-list-style1 mb-5">
-                                        <div className="twm-media">
-                                            <JobZImage src="images/jobs-company/pic2.jpg" alt="#" />
-                                        </div>
-                                        <div className="twm-mid-content">
-                                            <NavLink to={publicUser.jobs.DETAIL1} className="twm-job-title">
-                                                <h4>Need Senior Rolling Stock Technician<span className="twm-job-post-duration">/ 15 days ago</span></h4>
-                                            </NavLink>
-                                            <p className="twm-job-address">1363-1385 Sunset Blvd Los Angeles, CA 90026, USA</p>
-                                            <a href="https://themeforest.net/user/thewebmax/portfolio" className="twm-job-websites site-text-primary">https://thewebmax.com</a>
-                                        </div>
-                                        <div className="twm-right-content">
-                                            <div className="twm-jobs-category green"><span className="twm-bg-brown">Intership</span></div>
-                                            <div className="twm-jobs-amount">$2000<span>/ Month</span></div>
-                                            <NavLink to={publicUser.jobs.DETAIL1} className="twm-jobs-browse site-text-primary">Browse Job</NavLink>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div className="twm-jobs-list-style1 mb-5">
-                                        <div className="twm-media">
-                                            <JobZImage src="images/jobs-company/pic3.jpg" alt="#" />
-                                        </div>
-                                        <div className="twm-mid-content">
-                                            <NavLink to={publicUser.jobs.DETAIL1} className="twm-job-title">
-                                                <h4 className="twm-job-title">IT Department Manager &amp; Blogger-Entrepenour  <span className="twm-job-post-duration">/ 6 Month ago</span></h4>
-                                            </NavLink>
-                                            <p className="twm-job-address">1363-1385 Sunset Blvd Los Angeles, CA 90026, USA</p>
-                                            <a href="https://themeforest.net/user/thewebmax/portfolio" className="twm-job-websites site-text-primary">https://thewebmax.com</a>
-                                        </div>
-                                        <div className="twm-right-content">
-                                            <div className="twm-jobs-category green"><span className="twm-bg-purple">Fulltime</span></div>
-                                            <div className="twm-jobs-amount">$1500 <span>/ Month</span></div>
-                                            <NavLink to={publicUser.jobs.DETAIL1} className="twm-jobs-browse site-text-primary">Browse Job</NavLink>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div className="twm-jobs-list-style1 mb-5">
-                                        <div className="twm-media">
-                                            <JobZImage src="images/jobs-company/pic4.jpg" alt="#" />
-                                        </div>
-                                        <div className="twm-mid-content">
-                                            <NavLink to={publicUser.jobs.DETAIL1} className="twm-job-title">
-                                                <h4 className="twm-job-title">Art Production Specialist   <span className="twm-job-post-duration">/ 2 days ago</span></h4>
-                                            </NavLink>
-                                            <p className="twm-job-address">1363-1385 Sunset Blvd Los Angeles, CA 90026, USA</p>
-                                            <a href="https://themeforest.net/user/thewebmax/portfolio" className="twm-job-websites site-text-primary">https://thewebmax.com</a>
-                                        </div>
-                                        <div className="twm-right-content">
-                                            <div className="twm-jobs-category green"><span className="twm-bg-sky">Freelancer</span></div>
-                                            <div className="twm-jobs-amount">$1200<span>/ Month</span></div>
-                                            <NavLink to={publicUser.jobs.DETAIL1} className="twm-jobs-browse site-text-primary">Browse Job</NavLink>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div className="twm-jobs-list-style1 mb-5">
-                                        <div className="twm-media">
-                                            <JobZImage src="images/jobs-company/pic5.jpg" alt="#" />
-                                        </div>
-                                        <div className="twm-mid-content">
-                                            <NavLink to={publicUser.jobs.DETAIL1} className="twm-job-title">
-                                                <h4 className="twm-job-title">Recreation &amp; Fitness Worker   <span className="twm-job-post-duration">/ 1 days ago</span></h4>
-                                            </NavLink>
-                                            <p className="twm-job-address">1363-1385 Sunset Blvd Los Angeles, CA 90026, USA</p>
-                                            <a href="https://themeforest.net/user/thewebmax/portfolio" className="twm-job-websites site-text-primary">https://thewebmax.com</a>
-                                        </div>
-                                        <div className="twm-right-content">
-                                            <div className="twm-jobs-category green"><span className="twm-bg-golden">Temporary</span></div>
-                                            <div className="twm-jobs-amount">$1700 <span>/ Month</span></div>
-                                            <NavLink to={publicUser.jobs.DETAIL1} className="twm-jobs-browse site-text-primary">Browse Job</NavLink>
-                                        </div>
-                                    </div>
-                                </li>
+                                    </li>
+                                ))}
                             </ul>
                             <div className="text-center m-b30">
                                 <NavLink to={publicUser.jobs.LIST} className=" site-button">Browse All Jobs</NavLink>

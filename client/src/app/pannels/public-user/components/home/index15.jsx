@@ -4,8 +4,7 @@ import { publicUser } from "../../../../../globals/route-names";
 import { loadScript, publicUrlFor, updateSkinStyle } from "../../../../../globals/constants";
 import CountUp from "react-countup";
 import { useEffect } from "react";
-import { getAllJobs } from "../../../../../api/jobapis.js";
-import { useState } from "react";
+import useJobs from "../../../../../hooks/usejob";
 
 function Home15Page() {
 
@@ -14,23 +13,10 @@ function Home15Page() {
         loadScript("js/custom.js")
     })
 
-    const [jobs, setJobs] = useState([])
+
+    const { jobs } = useJobs();
 
 
-    // fetch jobs
-    const fetchjobs = async () => {
-        try {
-            const res = await getAllJobs()
-            setJobs(res.data) // backend data array
-            console.log(res)
-        } catch (err) {
-            console.log(err)
-        }
-    }
-
-    useEffect(() => {
-        fetchjobs();
-    }, []);
 
     return (
         <>
@@ -582,7 +568,7 @@ function Home15Page() {
                     <div className="section-content">
                         <div className="twm-jobs-list-wrap">
                             <ul>
-                                {jobs?.map((job) => (
+                                {jobs?.slice(0, 10).map((job) => (
                                     <li key={job._id}>
                                         <div className="twm-jobs-list-style1 mb-5">
                                             <div className="twm-media">

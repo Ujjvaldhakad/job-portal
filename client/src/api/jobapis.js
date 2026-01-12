@@ -1,10 +1,4 @@
-import axios from "axios";
+import API from "./auth";
 
-const jobApi = axios.create({
-    baseURL: "http://localhost:8080/api",
-});
-
-// get all jobs
-export const getAllJobs = () => jobApi.get("/jobs/jobs");
-
-export default jobApi;
+// get all jobs 
+export const getAllJobs = () => API.get("/jobs/jobs");

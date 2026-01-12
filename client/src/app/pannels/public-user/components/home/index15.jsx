@@ -583,7 +583,7 @@ function Home15Page() {
                                             </div>
                                             <div className="twm-right-content">
                                                 <div className="twm-jobs-category green"><span className="twm-bg-green">New</span></div>
-                                                <div className="twm-jobs-amount">${job.offerdSalary} <span>/ Month</span></div>
+                                                <div className="twm-jobs-amount">${job.estimatedSalary} <span>/ Month</span></div>
                                                 <NavLink to={publicUser.jobs.DETAIL1} className="twm-jobs-browse site-text-primary">Browse Job</NavLink>
                                             </div>
                                         </div>

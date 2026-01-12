@@ -4,6 +4,7 @@ import SectionRecordsFilter from "../../sections/common/section-records-filter";
 import { useEffect } from "react";
 import { loadScript } from "../../../../../globals/constants";
 
+
 function JobsListPage() {
 
     const _filterConfig = {
@@ -14,9 +15,10 @@ function JobsListPage() {
         showingUpto: ""
     }
 
-    useEffect(()=>{
+    useEffect(() => {
         loadScript("js/custom.js")
     })
+
 
     return (
         <>

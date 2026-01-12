@@ -11,6 +11,7 @@ const useJobs = () => {
         try {
             // get jobs
             const res = await getAllJobs();
+            console.log(res)
             setJobs(res.data || []); // ensure array
         } catch (error) {
             console.log(error);

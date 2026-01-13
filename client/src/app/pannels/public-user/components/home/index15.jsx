@@ -576,7 +576,7 @@ function Home15Page() {
                                             </div>
                                             <div className="twm-mid-content">
                                                 <NavLink to={publicUser.jobs.DETAIL1} className="twm-job-title">
-                                                    <h4>{job.title}  <span className="twm-job-post-duration">/ 1 days ago</span></h4>
+                                                    <h4>{job.title}  <span className="twm-job-post-duration">/{((Date.now() - new Date(job.createdAt)) / 86400000) | 0} days ago</span></h4>
                                                 </NavLink>
                                                 <p className="twm-job-address">{job.location}</p>
                                                 <a href="https://themeforest.net/user/thewebmax/portfolio" className="twm-job-websites site-text-primary">{job.website}</a>

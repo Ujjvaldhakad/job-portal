@@ -5,20 +5,18 @@ import { getAllJobs } from "../api/jobapis";
 
 const useJobs = () => {
     const [jobs, setJobs] = useState([]);
-    const [loading, setLoading] = useState(true);
+
 
     const fetchJobs = async () => {
         try {
             // get jobs
             const res = await getAllJobs();
-            console.log(res)
             setJobs(res.data || []); // ensure array
         } catch (error) {
             console.log(error);
-        } finally {
-            setLoading(false);
         }
     };
+
 
     useEffect(() => {
         fetchJobs();
@@ -26,9 +24,13 @@ const useJobs = () => {
 
     return {
         jobs,
-        loading,
         fetchJobs,
     };
+
 };
 
 export default useJobs;
+
+
+// const daysOld = (Date.now() - new Date(createdAt)) / 86400000 | 0;
+// 86400000 = 1 day = 24×60×60×1000 ms

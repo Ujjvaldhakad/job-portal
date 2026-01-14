@@ -1,8 +1,33 @@
 import { NavLink } from "react-router-dom";
 import { publicUser } from "../../../../../../globals/route-names";
 import SectionSideAdvert from "./section-side-advert";
+import useJobs from "../../../../../../hooks/usejob";
+import { useState, useEffect } from "react";
 
 function SectionJobsSidebar1() {
+    const { jobs } = useJobs();
+    const [fillterJobs, setFillterJobs] = useState([]);
+
+    useEffect(() => {
+        setFillterJobs(jobs);
+    }, [jobs]);
+
+    const filterJobs = (e) => {
+        const value = e.target.value;
+
+        console.log("Selected:", value);
+
+        if (value === "All Category") {
+            console.log("Filtered Jobs:", jobs);
+            return;
+        }
+
+        const filteredJobs = jobs.filter(job => job.title === value);
+        setFillterJobs(filteredJobs);
+    };
+
+    console.log("Filtered Jobs:", fillterJobs);
+
     return (
         <>
             <div className="side-bar">
@@ -10,11 +35,12 @@ function SectionJobsSidebar1() {
                     <form>
                         <div className="form-group mb-4">
                             <h4 className="section-head-small mb-4">Category</h4>
-                            <select className="wt-select-bar-large selectpicker" data-live-search="true" data-bv-field="size">
+                            <select onChange={filterJobs} className="wt-select-bar-large selectpicker" data-live-search="true" data-bv-field="size">
                                 <option>All Category</option>
                                 <option>Web Designer</option>
                                 <option>Developer</option>
                                 <option>Acountant</option>
+                                <option>HR Manager</option>
                             </select>
                         </div>
                         <div className="form-group mb-4">

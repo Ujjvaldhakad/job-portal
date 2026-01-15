@@ -2,21 +2,19 @@ import JobZImage from "../../../../common/jobz-img";
 import { NavLink } from "react-router-dom";
 import { publicUser } from "../../../../../globals/route-names";
 import SectionPagination from "../common/section-pagination";
-import useJobs from "../../../../../hooks/usejob";
 import { useState } from "react";
+import { useFilterJobs } from "../../../../../hooks/FilterJobsProvider";
 
 function SectionJobsList() {
 
-    const { jobs } = useJobs();
-
-    // Pagination States
+    const { filterJobs } = useFilterJobs();
     const [currentPage, setCurrentPage] = useState(1);
     const ITEMS_PER_PAGE = 10;
 
-    // Calculate jobs for current page
     const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
     const endIndex = startIndex + ITEMS_PER_PAGE;
-    const currentJobs = jobs.slice(startIndex, endIndex);
+
+    const currentJobs = filterJobs.slice(startIndex, endIndex);
 
     return (
         <div>
@@ -55,10 +53,9 @@ function SectionJobsList() {
                 </ul>
             </div>
 
-            {/* Pagination Component */}
             <SectionPagination
                 currentPage={currentPage}
-                totalPages={Math.ceil(jobs.length / ITEMS_PER_PAGE)}
+                totalPages={Math.ceil(filterJobs.length / ITEMS_PER_PAGE)}
                 onPageChange={setCurrentPage}
             />
         </div>

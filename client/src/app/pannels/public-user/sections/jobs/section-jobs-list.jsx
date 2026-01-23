@@ -35,7 +35,7 @@ function SectionJobsList() {
                                             </span>
                                         </h4>
                                     </NavLink>
-                                    <p className="twm-job-address">{job.location}</p>
+                                    <p className="twm-job-address"><b>{job.location},</b>  Job type :-{job.jobType}-:</p>
                                     <a href={job.website} className="twm-job-websites site-text-primary">
                                         {job.website}
                                     </a>

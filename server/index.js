@@ -16,9 +16,14 @@ const port = process.env.PORT;
 
 // cors setup
 app.use(cors({
-    origin: process.env.Client_URL || "http://localhost:3000",
-    credentials: true,
+    origin: [
+        "http://localhost:3000",
+        "https://job-portal-s2oi-33nbr2bfs-ujjval-dhakads-projects.vercel.app"
+    ],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true
 }));
+
 
 
 // express middleware

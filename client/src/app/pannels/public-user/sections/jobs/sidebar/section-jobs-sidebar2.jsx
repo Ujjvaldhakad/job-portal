@@ -145,7 +145,7 @@ function SectionJobsSidebar2({ _config }) {
                     </div>
                 </div>
             }
-            
+
             <SectionSideAdvert />
         </>
     )

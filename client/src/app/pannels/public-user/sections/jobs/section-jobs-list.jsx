@@ -3,13 +3,16 @@ import { NavLink } from "react-router-dom";
 import { publicUser } from "../../../../../globals/route-names";
 import SectionPagination from "../common/section-pagination";
 import { useState } from "react";
-import { useFilterJobs } from "../../../../../hooks/FilterJobsProvider";
+import { useFilterJobs } from "../../../../../hooks/useFilterJobsProvider";
+import { getShowJobsValue } from "../../../../../hooks/useshowJobs";
 
 function SectionJobsList() {
 
     const { filterJobs } = useFilterJobs();
     const [currentPage, setCurrentPage] = useState(1);
-    const ITEMS_PER_PAGE = 10;
+    const op = getShowJobsValue();
+    const ITEMS_PER_PAGE = op;
+    console.log(op)
 
     const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
     const endIndex = startIndex + ITEMS_PER_PAGE;
@@ -63,3 +66,4 @@ function SectionJobsList() {
 }
 
 export default SectionJobsList;
+

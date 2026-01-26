@@ -6,7 +6,6 @@ import { getAllJobs } from "../api/jobapis";
 const useJobs = () => {
     const [jobs, setJobs] = useState([]);
 
-
     const fetchJobs = async () => {
         try {
             // get jobs
@@ -26,7 +25,6 @@ const useJobs = () => {
         jobs,
         fetchJobs,
     };
-
 };
 
 export default useJobs;
@@ -34,3 +32,6 @@ export default useJobs;
 
 // const daysOld = (Date.now() - new Date(createdAt)) / 86400000 | 0;
 // 86400000 = 1 day = 24×60×60×1000 ms
+
+
+

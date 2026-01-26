@@ -1,4 +1,14 @@
+import React from "react";
+import { setShowJobsValue } from "../../../../../hooks/useshowJobs";
+
+
 function SectionRecordsFilter({ _config }) {
+
+
+    const onChangeShowJobs = (e) => {
+        setShowJobsValue(Number(e.target.value));
+    }
+
 
     return (
         <>
@@ -15,22 +25,13 @@ function SectionRecordsFilter({ _config }) {
                     }
                 </span>
                 <form className="woocommerce-ordering twm-filter-select" method="get">
-                    <span className="woocommerce-result-count">Short By</span>
-                    <select className="wt-select-bar-2 selectpicker" data-live-search="true" data-bv-field="size">
-                        <option>Most Recent</option>
-                        <option>Freelance</option>
-                        <option>Full Time</option>
-                        <option>Internship</option>
-                        <option>Part Time</option>
-                        <option>Temporary</option>
-                    </select>
-                    <select className="wt-select-bar-2 selectpicker" data-live-search="true" data-bv-field="size">
-                        <option>Show 10</option>
-                        <option>Show 20</option>
-                        <option>Show 30</option>
-                        <option>Show 40</option>
-                        <option>Show 50</option>
-                        <option>Show 60</option>
+                    <select onChange={onChangeShowJobs} className="wt-select-bar-2 selectpicker" data-live-search="true" data-bv-field="size">
+                        <option value="10">Show 10</option>
+                        <option value="20">Show 20</option>
+                        <option value="30">Show 30</option>
+                        <option value="40">Show 40</option>
+                        <option value="50">Show 50</option>
+                        <option value="60">Show 60</option>
                     </select>
                 </form>
             </div>

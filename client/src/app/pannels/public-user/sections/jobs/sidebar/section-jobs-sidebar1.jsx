@@ -3,7 +3,7 @@ import { publicUser } from "../../../../../../globals/route-names";
 import SectionSideAdvert from "./section-side-advert";
 import { useEffect, useState } from "react";
 import useJobs from "../../../../../../hooks/usejob";
-import { useFilterJobs } from "../../../../../../hooks/FilterJobsProvider";
+import { useFilterJobs } from "../../../../../../hooks/useFilterJobsProvider";
 
 function SectionJobsSidebar1() {
     const { jobs } = useJobs();
